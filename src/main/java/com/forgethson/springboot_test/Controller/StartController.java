@@ -57,6 +57,7 @@ public class StartController {
         return map;
     }
 
+    // 测试打印log
     @RequestMapping("/log")
     public String testLog() {
         logger.debug("=====测试日志debug级别打印====");

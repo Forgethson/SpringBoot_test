@@ -3,3 +3,9 @@ server:
 logging:
   level:
     com.forgethson.springboot_test.dao: trace
+config:
+  myUrl: http://localhost:8080/start/helloworld
+  urls:
+    orderUrl: http://localhost:8002
+    userUrl: http://localhost:8003
+    shoppingUrl: http://localhost:8004
