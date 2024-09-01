@@ -1,5 +1,6 @@
 package com.forgethson.springboot_test.Controller;
 
+import com.forgethson.springboot_test.Annotation.Record;
 import com.forgethson.springboot_test.Entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ import java.util.Map;
 /**
  * 测试两类返回值：String、JSON
  * 测试打印日志
- * */
+ */
 
 @RestController
 @RequestMapping("/start")
@@ -63,7 +64,7 @@ public class StartController {
     }
 
     // 测试打印log
-    @RequestMapping("/log")
+    @GetMapping("/log")
     public String testLog() {
         logger.debug("=====测试日志debug级别打印====");
         logger.info("======测试日志info级别打印=====");
@@ -74,6 +75,20 @@ public class StartController {
         String str2 = "--------";
         logger.info("======测试拼接：{} {}", str1, str2);
         return "success";
+    }
+
+    // 测试注解+AOP
+    @GetMapping("/annotation")
+    @Record("this is me, testAnnotation()")
+    public String testAnnotation() {
+        return "success";
+    }
+
+    // 测试注解+AOP，抛出异常
+    @GetMapping("/annotation2")
+    @Record("this is me, testAnnotation()2")
+    public String testAnnotation2() {
+        throw new RuntimeException("testAnnotation2() execute err!");
     }
 
 }
