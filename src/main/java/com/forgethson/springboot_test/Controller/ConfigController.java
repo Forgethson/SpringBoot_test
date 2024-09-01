@@ -2,6 +2,7 @@ package com.forgethson.springboot_test.Controller;
 
 import com.forgethson.springboot_test.config.UrlsConfig;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +19,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/config")
 @AllArgsConstructor
+@Slf4j
 public class ConfigController {
-    private static final Logger logger = LoggerFactory.getLogger(ConfigController.class);
     // final + AllArgsConstructor 实现自动装配，很简洁
     private final UrlsConfig urlsConfig;
 
@@ -27,7 +28,7 @@ public class ConfigController {
     // 通过@Value获取配置
     @GetMapping("/url")
     public String getUrl() {
-        logger.info("getUrl : {}", urlsConfig.getMyUrl());
+        log.info("getUrl : {}", urlsConfig.getMyUrl());
         return "getUrl :" + urlsConfig.getMyUrl();
     }
 
@@ -38,7 +39,7 @@ public class ConfigController {
         res.add(urlsConfig.getOrderUrl());
         res.add(urlsConfig.getUserUrl());
         res.add(urlsConfig.getShoppingUrl());
-        logger.info("getUrls : {}", res);
+        log.info("getUrls : {}", res);
         return res;
     }
 
