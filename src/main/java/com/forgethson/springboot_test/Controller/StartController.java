@@ -12,6 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 测试两类返回值：String、JSON
+ * 测试打印日志
+ * */
+
 @RestController
 @RequestMapping("/start")
 public class StartController {

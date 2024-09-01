@@ -18,5 +18,5 @@ public class UrlsConfig {
     private String shoppingUrl;
 
     @Value("${config.myUrl}")
-    private String url;
+    private String myUrl;
 }

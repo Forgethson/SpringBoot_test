@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 测试两种读取配置文件的方式
+ * */
+
 @RestController
 @RequestMapping("/config")
 @AllArgsConstructor
@@ -23,8 +27,8 @@ public class ConfigController {
     // 通过@Value获取配置
     @GetMapping("/url")
     public String getUrl() {
-        logger.info("getUrl : {}", urlsConfig.getUrl());
-        return "getUrl :" + urlsConfig.getUrl();
+        logger.info("getUrl : {}", urlsConfig.getMyUrl());
+        return "getUrl :" + urlsConfig.getMyUrl();
     }
 
     // 通过@ConfigurationProperties获取配置
