@@ -2,6 +2,10 @@ package com.forgethson.springboot_test.Annotation;
 
 import java.lang.annotation.*;
 
+/**
+ * 自定义注解 Record
+ * */
+
 @Target(ElementType.METHOD) // 限定作用在方法上
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

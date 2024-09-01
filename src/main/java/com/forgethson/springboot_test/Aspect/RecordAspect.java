@@ -9,15 +9,21 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
+
+/**
+ * 增强Record注解的切面类
+ * */
 
 @Component
 @Aspect
 @Slf4j
+@Order(1)
 public class RecordAspect {
 
-    // 只对指定的注解增强
+    // 只对Record注解增强
     @Pointcut("@annotation(com.forgethson.springboot_test.Annotation.Record)")
     public void pointcut() {
 
@@ -51,6 +57,6 @@ public class RecordAspect {
     // 前置通知（写法2）
     @Before("@annotation(record)")
     public void before(JoinPoint joinPoint, Record record) {
-        log.info("@before：捕捉到record注解的pointcut，value={}", record.value());
+        log.info("@before：RecordAspect执行，value={}", record.value());
     }
 }
