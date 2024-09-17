@@ -1,6 +1,6 @@
-package com.forgethson.springboot_test.Aspect;
+package com.forgethson.springboot_test.aspect;
 
-import com.forgethson.springboot_test.Annotation.Record;
+import com.forgethson.springboot_test.annotation.Record;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
 public class RecordAspect {
 
     // 只对Record注解增强
-    @Pointcut("@annotation(com.forgethson.springboot_test.Annotation.Record)")
+    @Pointcut("@annotation(com.forgethson.springboot_test.annotation.Record)")
     public void pointcut() {
 
     }

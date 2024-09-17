@@ -9,3 +9,13 @@ config:
     orderUrl: http://localhost:8002
     userUrl: http://localhost:8003
     shoppingUrl: http://localhost:8004
+spring:
+  application:
+    name: SpringBoot_test
+  datasource:
+    url: jdbc:mysql://javanode:3306/my_db?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

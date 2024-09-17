@@ -1,7 +1,7 @@
-package com.forgethson.springboot_test.Controller;
+package com.forgethson.springboot_test.controller;
 
-import com.forgethson.springboot_test.Annotation.Record;
-import com.forgethson.springboot_test.Entity.User;
+import com.forgethson.springboot_test.annotation.Record;
+import com.forgethson.springboot_test.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

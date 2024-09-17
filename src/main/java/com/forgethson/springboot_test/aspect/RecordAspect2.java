@@ -1,4 +1,4 @@
-package com.forgethson.springboot_test.Aspect;
+package com.forgethson.springboot_test.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class RecordAspect2 {
 
     // 只对Record注解增强
-    @Pointcut("@annotation(com.forgethson.springboot_test.Annotation.Record)")
+    @Pointcut("@annotation(com.forgethson.springboot_test.annotation.Record)")
     public void pointcut() {
 
     }

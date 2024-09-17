@@ -1,4 +1,4 @@
-package com.forgethson.springboot_test.Annotation;
+package com.forgethson.springboot_test.annotation;
 
 import java.lang.annotation.*;
 

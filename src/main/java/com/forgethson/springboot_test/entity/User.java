@@ -1,4 +1,4 @@
-package com.forgethson.springboot_test.Entity;
+package com.forgethson.springboot_test.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
