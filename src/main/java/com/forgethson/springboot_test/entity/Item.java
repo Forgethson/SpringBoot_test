@@ -4,19 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-    private Long id;
-    private String username;
-    private String password;
+public class Item {
     @NotNull
-    private boolean isMale;
-    @Valid
-    private List<Item> items;
+    private int id;
+    @NotNull
+    private String name;
 }

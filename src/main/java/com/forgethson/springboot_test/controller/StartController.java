@@ -3,8 +3,10 @@ package com.forgethson.springboot_test.controller;
 import com.forgethson.springboot_test.annotation.Record;
 import com.forgethson.springboot_test.entity.User;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Map;
  * 测试打印日志
  */
 
+@Validated
 @RestController
 @RequestMapping("/start")
 @Slf4j
@@ -31,7 +34,7 @@ public class StartController {
     @GetMapping("/pojo")
     public User getUser() {
         log.info("请求：/start/pojo");
-        return new User(1L, "用户1", "123456", true);
+        return new User(1L, "用户1", "123456", true, List.of());
     }
 
     // 返回list（转为JSON）
@@ -39,8 +42,8 @@ public class StartController {
     public List<User> getUserList() {
         log.info("请求：/start/list");
         List<User> userList = new ArrayList<>();
-        User user1 = new User(1L, "测试用户1", "aaad21414", true);
-        User user2 = new User(2L, "测试用户2", "114132412", true);
+        User user1 = new User(1L, "测试用户1", "aaad21414", true, List.of());
+        User user2 = new User(2L, "测试用户2", "114132412", true, List.of());
         userList.add(user1);
         userList.add(user2);
         return userList;
@@ -51,7 +54,7 @@ public class StartController {
     public Map<String, Object> getMap() {
         log.info("请求：/start/map");
         Map<String, Object> map = new HashMap<>(3);
-        User user = new User(1L, "测试用户1", "123456", true);
+        User user = new User(1L, "测试用户1", "123456", true, List.of());
         map.put("作者信息", user);
         map.put("爱好", "sleep");
         map.put("ID", "Forgethson");
@@ -60,7 +63,7 @@ public class StartController {
     }
 
     @PostMapping("/body")
-    public User testBody(@RequestBody User user) {
+    public User testBody(@RequestBody @Valid User user) {
         log.info(user.toString());
         return user;
     }
